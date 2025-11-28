@@ -97,9 +97,9 @@ DECLARE_API(TextDraw, SetFont, objectPtr textdraw, int font)
 	API_RETURN(bool ret);
 }
 
-DECLARE_API(TextDraw, SetSetProportional, objectPtr textdraw, bool set)
+DECLARE_API(TextDraw, SetProportional, objectPtr textdraw, bool set)
 {
-	bool ret = Runtime::Instance().GetOMPAPI()->TextDraw.SetSetProportional(textdraw, set);
+	bool ret = Runtime::Instance().GetOMPAPI()->TextDraw.SetProportional(textdraw, set);
 	API_RETURN(bool ret);
 }
 
