@@ -61,7 +61,7 @@ DECLARE_API(NPC, SetPos, objectPtr npc, float x, float y, float z)
 	API_RETURN(bool ret);
 }
 
-DECLARE_API(NPC, GetPos, objectPtr npc, FloatRef x, FloatRef y, FloatRef z)
+DECLARE_API_ARGNUM(NPC, GetPos, 1, objectPtr npc, FloatRef x, FloatRef y, FloatRef z)
 {
 	bool ret = Runtime::Instance().GetOMPAPI()->NPC.GetPos(npc, x, y, z);
 	API_RETURN(bool ret, FloatRef x, FloatRef y, FloatRef z);
@@ -73,7 +73,7 @@ DECLARE_API(NPC, SetRot, objectPtr npc, float rx, float ry, float rz)
 	API_RETURN(bool ret);
 }
 
-DECLARE_API(NPC, GetRot, objectPtr npc, FloatRef rx, FloatRef ry, FloatRef rz)
+DECLARE_API_ARGNUM(NPC, GetRot, 1, objectPtr npc, FloatRef rx, FloatRef ry, FloatRef rz)
 {
 	bool ret = Runtime::Instance().GetOMPAPI()->NPC.GetRot(npc, rx, ry, rz);
 	API_RETURN(bool ret, FloatRef rx, FloatRef ry, FloatRef rz);
@@ -85,7 +85,7 @@ DECLARE_API(NPC, SetFacingAngle, objectPtr npc, float angle)
 	API_RETURN(bool ret);
 }
 
-DECLARE_API(NPC, GetFacingAngle, objectPtr npc, FloatRef angle)
+DECLARE_API_ARGNUM(NPC, GetFacingAngle, 1, objectPtr npc, FloatRef angle)
 {
 	bool ret = Runtime::Instance().GetOMPAPI()->NPC.GetFacingAngle(npc, angle);
 	API_RETURN(bool ret, FloatRef angle);
@@ -283,10 +283,10 @@ DECLARE_API(NPC, SetKeys, objectPtr npc, uint16_t upAndDown, uint16_t leftAndRig
 	API_RETURN(bool ret);
 }
 
-DECLARE_API(NPC, GetKeys, objectPtr npc, UInt16Ref upAndDown, UInt16Ref leftAndRight, UInt16Ref keys)
+DECLARE_API_ARGNUM(NPC, GetKeys, 1, objectPtr npc, UInt16Ref upAndDown, UInt16Ref leftAndRight, UInt16Ref keys)
 {
 	bool ret = Runtime::Instance().GetOMPAPI()->NPC.GetKeys(npc, upAndDown, leftAndRight, keys);
-	API_RETURN(bool ret);
+	API_RETURN(bool ret, UInt16Ref upAndDown, UInt16Ref leftAndRight, UInt16Ref keys);
 }
 
 DECLARE_API(NPC, SetWeaponSkillLevel, objectPtr npc, uint8_t skill, int level)
@@ -607,7 +607,7 @@ DECLARE_API(NPC, GetPathPointCount, int pathId)
 	API_RETURN(int ret);
 }
 
-DECLARE_API(NPC, GetPathPoint, int pathId, int pointIndex, FloatRef x, FloatRef y, FloatRef z, FloatRef stopRange)
+DECLARE_API_ARGNUM(NPC, GetPathPoint, 2, int pathId, int pointIndex, FloatRef x, FloatRef y, FloatRef z, FloatRef stopRange)
 {
 	bool ret = Runtime::Instance().GetOMPAPI()->NPC.GetPathPoint(pathId, pointIndex, x, y, z, stopRange);
 	API_RETURN(bool ret, FloatRef x, FloatRef y, FloatRef z, FloatRef stopRange);
@@ -649,7 +649,7 @@ DECLARE_API(NPC, SetAnimation, objectPtr npc, int animationId, float delta, bool
 	API_RETURN(bool ret);
 }
 
-DECLARE_API(NPC, GetAnimation, objectPtr npc, IntRef animationId, FloatRef delta, BoolRef loop, BoolRef lockX, BoolRef lockY, BoolRef freeze, IntRef time)
+DECLARE_API_ARGNUM(NPC, GetAnimation, 1, objectPtr npc, IntRef animationId, FloatRef delta, BoolRef loop, BoolRef lockX, BoolRef lockY, BoolRef freeze, IntRef time)
 {
 	bool ret = Runtime::Instance().GetOMPAPI()->NPC.GetAnimation(npc, animationId, delta, loop, lockX, lockY, freeze, time);
 	API_RETURN(bool ret, IntRef animationId, FloatRef delta, BoolRef loop, BoolRef lockX, BoolRef lockY, BoolRef freeze, IntRef time);
@@ -775,7 +775,7 @@ DECLARE_API(NPC, SetNodePoint, int nodeId, int pointId)
 	API_RETURN(bool ret);
 }
 
-DECLARE_API(NPC, GetNodePointPosition, int nodeId, FloatRef x, FloatRef y, FloatRef z)
+DECLARE_API_ARGNUM(NPC, GetNodePointPosition, 1, int nodeId, FloatRef x, FloatRef y, FloatRef z)
 {
 	bool ret = Runtime::Instance().GetOMPAPI()->NPC.GetNodePointPosition(nodeId, x, y, z);
 	API_RETURN(bool ret, FloatRef x, FloatRef y, FloatRef z);
@@ -787,7 +787,7 @@ DECLARE_API(NPC, GetNodePointCount, int nodeId)
 	API_RETURN(int ret);
 }
 
-DECLARE_API(NPC, GetNodeInfo, int nodeId, UInt32Ref vehicleNodes, UInt32Ref pedNodes, UInt32Ref naviNodes)
+DECLARE_API_ARGNUM(NPC, GetNodeInfo, 1, int nodeId, UInt32Ref vehicleNodes, UInt32Ref pedNodes, UInt32Ref naviNodes)
 {
 	bool ret = Runtime::Instance().GetOMPAPI()->NPC.GetNodeInfo(nodeId, vehicleNodes, pedNodes, naviNodes);
 	API_RETURN(bool ret, UInt32Ref vehicleNodes, UInt32Ref pedNodes, UInt32Ref naviNodes);
@@ -847,7 +847,7 @@ DECLARE_API(NPC, SetSurfingOffset, objectPtr npc, float x, float y, float z)
 	API_RETURN(bool ret);
 }
 
-DECLARE_API(NPC, GetSurfingOffset, objectPtr npc, FloatRef x, FloatRef y, FloatRef z)
+DECLARE_API_ARGNUM(NPC, GetSurfingOffset, 1, objectPtr npc, FloatRef x, FloatRef y, FloatRef z)
 {
 	bool ret = Runtime::Instance().GetOMPAPI()->NPC.GetSurfingOffset(npc, x, y, z);
 	API_RETURN(bool ret, FloatRef x, FloatRef y, FloatRef z);
