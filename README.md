@@ -32,3 +32,4 @@ cmake .. -A Win32 -T ClangCL
 ```
 
 Open Visual Studio and build the solution.
+
